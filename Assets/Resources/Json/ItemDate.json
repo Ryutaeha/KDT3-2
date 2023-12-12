@@ -1,0 +1,87 @@
+{
+  "Items": {
+    "Item1": {
+      "ItemName": "무기1",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item2": {
+      "ItemName": "무기2",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item3": {
+      "ItemName": "무기3",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item4": {
+      "ItemName": "무기4",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item5": {
+      "ItemName": "무기5",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item6": {
+      "ItemName": "무기6",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item7": {
+      "ItemName": "무기7",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item8": {
+      "ItemName": "무기8",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item9": {
+      "ItemName": "무기9",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    },
+    "Item10": {
+      "ItemName": "무기10",
+      "Health": 1,
+      "Attack": 1,
+      "Defensive": 1,
+      "Fatal": 1,
+      "Info": "테스트 중입니다."
+    }
+  },
+  "주석용1": {
+    "사용법": "아이템 스테이터스 저장용 입니다. "
+  }
+}

@@ -1125,6 +1125,7 @@ GameObject:
   - component: {fileID: 8484857202629794964}
   - component: {fileID: 7632732355646710412}
   - component: {fileID: 5020598900175978667}
+  - component: {fileID: 2377533101205896969}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1147,7 +1148,7 @@ Transform:
   - {fileID: 5202792716127830200}
   - {fileID: 4718300690681313453}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &8484857202629794964
 SortingGroup:
@@ -1196,11 +1197,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerId: "\uD61C\uB514\uBFCC"
   playerLevel: 1
+  playerJob: "\uC720\uC0AC\uAE61\uD328"
   playerGold: 1000
   playerHealth: 100
   playerAttack: 30
   playerDefensive: 20
-  playerfatal: 10
+  playerFatal: 10
+  playerSelfIntroduction: "\uAFC0\uAE30\uC694\uBBF8 \uD61C\uB514\uBFCC \uB4F1\uC7A5!"
+--- !u!114 &2377533101205896969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3260355533501880264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5aa0665ff9048dc4c81439daacb39535, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3852141861315365895
 GameObject:
   m_ObjectHideFlags: 0
