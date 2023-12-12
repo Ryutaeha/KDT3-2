@@ -10,17 +10,19 @@ public class GameManager : MonoBehaviour
 {
     private JsonLordManager jsonLordManager = new JsonLordManager();
     private AddressbleManager addressbleManager = new AddressbleManager();
-    private ItemManager itemManager = new ItemManager();
+    private ResourceManager resourceManager = new ResourceManager();
     private static GameManager instance;
     public static GameObject Player {  get { return Instance.player; }}
 
     private GameObject player;
     
     public event Action<GameObject> PlayerSet;
+    public event Action ItemUpdate;
+    public event Action<ItemAbility, int> PopUpOpen;
 
     public JsonLordManager JsonLordManager { get { return Instance.jsonLordManager; } }
     public AddressbleManager AddressbleManager {  get { return Instance.addressbleManager; }}
-    public ItemManager ItemManager { get { return Instance.itemManager; }}
+    public ResourceManager ResourceManager { get { return Instance.resourceManager; }}
     // ΩÃ±€≈Ê»≠
     public static GameManager Instance
     {
@@ -60,10 +62,6 @@ public class GameManager : MonoBehaviour
         Debug.Log($"{item.Key}  {item.ItemName}  {item.Attack}  {item.Defensive}  {item.Health}  {item.Fatal} {item.Info}");
     }
 
-    private void Start()
-    {
-        itemManager.items = jsonLordManager.ItemsName();
-    }
 
     public async void PlayerCreate()
     {
@@ -81,5 +79,22 @@ public class GameManager : MonoBehaviour
 
         //Addressables.Release(handle);
     }
+    public void EquipSet()
+    {
+        List<ItemAbility> items = Player.GetComponent<Inventory>().Items;
+        foreach (ItemAbility item in items)
+        {
+            if (item.Equip) item.Equip = false;
+        }
+    }
 
+    internal void EquipUpdate()
+    {
+        ItemUpdate?.Invoke();
+    }
+
+    internal void OpenPopUpUI(ItemAbility itemInfo, int choice)
+    {
+        PopUpOpen?.Invoke(itemInfo , choice);
+    }
 }

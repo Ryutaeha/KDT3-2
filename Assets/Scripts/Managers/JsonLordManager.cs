@@ -14,7 +14,9 @@ public class ItemAbility
     public int Attack;
     public int Defensive;
     public int Fatal;
+    public int price;
     public string Info;
+    public bool Equip;
 }
 
 [System.Serializable]

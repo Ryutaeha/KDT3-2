@@ -18,6 +18,7 @@ public class SelectViewUI : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.PlayerSet += SetPlayer;
+        GameManager.Instance.ItemUpdate += EquipUpdate;
         gameObject.SetActive(false);
     }
 
@@ -80,7 +81,7 @@ public class SelectViewUI : MonoBehaviour
         for (int i = 0; i < inventory.Count; i++)
         {
             GameObject instantiatedPrefab = Instantiate(Items, new Vector3(0, 0, 0), Quaternion.identity, ItemBox.transform);
-            instantiatedPrefab.transform.GetChild(0).GetComponent<Item>().ItemSet(inventory[i].Key);
+            instantiatedPrefab.transform.GetChild(0).GetComponent<Item>().ItemSet(inventory[i], 0);
         }
         exitBtn.onClick.AddListener(() => ClearAllChildren());
     }
@@ -112,6 +113,12 @@ public class SelectViewUI : MonoBehaviour
     {
         GameManager.Instance.AddressbleManager.ReleaseObj(view);
     }
-
-
+    public void EquipUpdate()
+    {
+        foreach (Transform child in ItemBox.transform)
+        { 
+            Item item = child.GetChild(0).GetComponent<Item>();
+            item.ItemEquipSet(item.ItemInfo.Equip);
+        }
+    }
 }

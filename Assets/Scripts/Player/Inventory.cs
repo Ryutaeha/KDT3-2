@@ -10,13 +10,18 @@ public class Inventory : MonoBehaviour
     public void Start()
     {
         items.Add(GameManager.Instance.JsonLordManager.ItemsSettings("Item1"));
-        items.Add(GameManager.Instance.JsonLordManager.ItemsSettings("Item1"));
-        items.Add(GameManager.Instance.JsonLordManager.ItemsSettings("Item1"));
+        items.Add(GameManager.Instance.JsonLordManager.ItemsSettings("Item2"));
+        items.Add(GameManager.Instance.JsonLordManager.ItemsSettings("Item3"));
+        ItemSet(items[1]);
     }
 
     public void AddItem(ItemAbility item)
     {
         items.Add(item);
     }
-
+    public void ItemSet(ItemAbility itemAbility)
+    {
+        itemAbility.Equip = true;
+        gameObject.GetComponent<PlayerAbility>().playerItemSet(itemAbility);
+    }
 }

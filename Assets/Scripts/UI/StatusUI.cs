@@ -6,11 +6,16 @@ using UnityEngine;
 
 public class StatusUI : MonoBehaviour
 {
+    
     internal void StatusView(GameObject player)
     {
-        gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = player.GetComponent<PlayerAbility>().PlayerAttack.ToString();
-        gameObject.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = player.GetComponent<PlayerAbility>().PlayerDefensive.ToString();
-        gameObject.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = player.GetComponent<PlayerAbility>().PlayerHealth.ToString();
-        gameObject.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = player.GetComponent<PlayerAbility>().PlayerFatal.ToString();
+        ItemAbility item = player.GetComponent<PlayerAbility>().PlayerItem;
+        PlayerAbility playerAbility = player.GetComponent<PlayerAbility>();
+        gameObject.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = $"{playerAbility.PlayerAttack + (item != null? item.Attack : 0)}";
+        gameObject.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = $"{playerAbility.PlayerDefensive + (item != null ? item.Defensive : 0)}";
+        gameObject.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = $"{playerAbility.PlayerHealth + (item != null ? item.Health : 0)}";
+        gameObject.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = $"{playerAbility.PlayerFatal + (item != null ? item.Fatal : 0)}";
     }
+
+    
 }

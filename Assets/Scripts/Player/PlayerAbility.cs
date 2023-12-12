@@ -15,6 +15,15 @@ public class PlayerAbility : MonoBehaviour
     [SerializeField] private int playerFatal;
     [SerializeField] private string playerSelfIntroduction;
 
+
+    private ItemAbility playerItem = null;
+
+    public ItemAbility PlayerItem { get { return playerItem; }}
+
+    public void playerItemSet(ItemAbility item)
+    {
+        playerItem = item;
+    }
     public string PlayerId { get { return playerId; } set { playerId = value; } }
     public int PlayerLevel { get { return playerLevel; } set { playerLevel = value; } }
     public string PlayerJob { get { return playerJob; } set { playerJob = value; } }

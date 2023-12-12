@@ -6,6 +6,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item2": {
@@ -14,6 +15,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item3": {
@@ -22,6 +24,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item4": {
@@ -30,6 +33,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item5": {
@@ -38,6 +42,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item6": {
@@ -46,6 +51,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item7": {
@@ -54,6 +60,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item8": {
@@ -62,6 +69,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item9": {
@@ -70,6 +78,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     },
     "Item10": {
@@ -78,6 +87,7 @@
       "Attack": 1,
       "Defensive": 1,
       "Fatal": 1,
+      "Price": 1000,
       "Info": "테스트 중입니다."
     }
   },
