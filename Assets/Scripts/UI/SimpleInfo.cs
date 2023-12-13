@@ -10,7 +10,6 @@ public class SimpleInfo : MonoBehaviour
     private void Start()
     {
         GameManager.Instance.PlayerSet += SetUI;
-
     }
 
     public void SetUI(GameObject player)

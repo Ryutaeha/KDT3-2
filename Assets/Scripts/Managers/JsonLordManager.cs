@@ -41,11 +41,9 @@ public class JsonLordManager
         // 파일이 존재하는지 확인
         if (jsonFile!=null)
         {
-            // 파일 내용 읽기
-            //string itemString = File.ReadAllText(filePath);
+
 
             // JSON 문자열을 객체로 역직렬화 (Newtonsoft.Json 사용)
-            //itemContainer = JsonConvert.DeserializeObject<ItemContainer>(itemString);
             itemContainer = JsonConvert.DeserializeObject<ItemContainer>(jsonFile.text);
             // 특정 플레이어 가져오기
             string targetItemSettingsKey = baseName;

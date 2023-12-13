@@ -20,10 +20,6 @@ public class PlayerAbility : MonoBehaviour
 
     public ItemAbility PlayerItem { get { return playerItem; }}
 
-    public void playerItemSet(ItemAbility item)
-    {
-        playerItem = item;
-    }
     public string PlayerId { get { return playerId; } set { playerId = value; } }
     public int PlayerLevel { get { return playerLevel; } set { playerLevel = value; } }
     public string PlayerJob { get { return playerJob; } set { playerJob = value; } }
@@ -33,5 +29,23 @@ public class PlayerAbility : MonoBehaviour
     public int PlayerDefensive { get { return playerDefensive; } set { playerDefensive = value; } }
     public int PlayerFatal { get { return playerFatal; } set { playerFatal = value; } }
     public string PlayerSelfIntroduction { get { return playerSelfIntroduction; } set { playerSelfIntroduction = value; } }
+
+    public void playerItemSet(ItemAbility item)
+    {
+        playerItem = item;
+    }
+    public void GetGold(int gold)
+    {
+        PlayerGold += gold;
+    }
+    public bool UseGold(int gold)
+    {
+        if(gold > PlayerGold) return false;
+        else
+        {
+            playerGold -= gold;
+            return true;
+        }
+    }
 }
 

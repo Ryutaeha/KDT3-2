@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public event Action<GameObject> PlayerSet;
     public event Action ItemUpdate;
     public event Action<ItemAbility, int> PopUpOpen;
-
+    public event Action GoldSet;
     public JsonLordManager JsonLordManager { get { return Instance.jsonLordManager; } }
     public AddressbleManager AddressbleManager {  get { return Instance.addressbleManager; }}
     public ResourceManager ResourceManager { get { return Instance.resourceManager; }}
@@ -58,8 +58,6 @@ public class GameManager : MonoBehaviour
         instance = this;
 
         PlayerCreate();
-        ItemAbility item = jsonLordManager.ItemsSettings("Item1");
-        Debug.Log($"{item.Key}  {item.ItemName}  {item.Attack}  {item.Defensive}  {item.Health}  {item.Fatal} {item.Info}");
     }
 
 
@@ -96,5 +94,29 @@ public class GameManager : MonoBehaviour
     internal void OpenPopUpUI(ItemAbility itemInfo, int choice)
     {
         PopUpOpen?.Invoke(itemInfo , choice);
+    }
+
+    internal bool BuyItem(ItemAbility itemInfo)
+    {
+        bool buyCheck = player.GetComponent<PlayerAbility>().UseGold(itemInfo.price);
+        if(buyCheck)
+        {
+            GoldSet?.Invoke();
+            player.GetComponent<Inventory>().Items.Add(itemInfo);
+            return true;
+        }
+        return false;
+    }
+
+    internal List<ItemAbility> Shop()
+    {
+        List <ItemAbility> shopItem = new List <ItemAbility>();
+        List<string> itemName = jsonLordManager.ItemsName();
+        
+        for (int i = 0; itemName.Count > i; i++)
+        { 
+            shopItem.Add(jsonLordManager.ItemsSettings(itemName[i]));
+        }
+        return shopItem;
     }
 }

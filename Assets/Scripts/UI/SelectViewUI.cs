@@ -19,6 +19,7 @@ public class SelectViewUI : MonoBehaviour
     {
         GameManager.Instance.PlayerSet += SetPlayer;
         GameManager.Instance.ItemUpdate += EquipUpdate;
+        GameManager.Instance.GoldSet += GoldSet;
         gameObject.SetActive(false);
     }
 
@@ -54,27 +55,26 @@ public class SelectViewUI : MonoBehaviour
             case 2:
                 ShopView();
                 break;
-            case 3:
-                BankView();
-                break;
         }
     }
 
-    private void BankView()
-    {
-        selectPanel.text = "은행";
-        Debug.Log("BankView");
-    }
+
 
     private void ShopView()
     {
         selectPanel.text = "상점";
-        Debug.Log("ShopView");
+        ItemBox.transform.parent.parent.gameObject.SetActive(true);
+        List<ItemAbility> inventory = GameManager.Instance.Shop();
+        for (int i = 0; i < inventory.Count; i++)
+        {
+            GameObject instantiatedPrefab = Instantiate(Items, new Vector3(0, 0, 0), Quaternion.identity, ItemBox.transform);
+            instantiatedPrefab.transform.GetChild(0).GetComponent<Item>().ItemSet(inventory[i], 1);
+        }
+        exitBtn.onClick.AddListener(() => ClearAllChildren());
     }
 
     private void InventoryView()
     {
-
         selectPanel.text = "인벤토리";
         ItemBox.transform.parent.parent.gameObject.SetActive(true);
         List<ItemAbility> inventory = player.GetComponent<Inventory>().Items;
